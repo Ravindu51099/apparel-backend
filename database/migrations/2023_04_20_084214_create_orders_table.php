@@ -16,6 +16,8 @@ return new class extends Migration
             $table->foreignId('customer_id');
             $table->string('material_type');
             $table->integer('quantity');
+            $table->string('print_available');
+            $table->string('required_size');
             $table->string('status')->nullable();
             $table->timestamps();
         });

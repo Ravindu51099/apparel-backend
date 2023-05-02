@@ -24,6 +24,9 @@ class OrderController extends Controller
             'customer_id' => 'required',
             'material_type' => 'required',
             'quantity' => 'required',
+            'print_available' => 'required',
+            'required_size' => 'required',
+            'status' => 'sometimes|required',
         ]);
         return Order::create(
             $request->all()
@@ -47,6 +50,8 @@ class OrderController extends Controller
             'customer_id' => 'sometimes|required',
             'material_type' => 'sometimes|required',
             'quantity' => 'sometimes|required',
+            'print_available' => 'sometimes|required',
+            'required_size' => 'sometimes|required',
             'status' => 'sometimes|required',
         ]);
 

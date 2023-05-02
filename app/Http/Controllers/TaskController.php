@@ -22,9 +22,10 @@ class TaskController extends Controller
     {
         $request->validate([
             'user_id' => 'required',
-            'product' => 'required',
-            'description' => 'required',
-            'time' => 'sometimes|required',
+            'order_id' => 'required',
+            'task_name' => 'required',
+            'time_spent' => 'sometimes|required',
+            'status' => 'sometimes|required',
         ]);
         return Task::create(
             $request->all()
@@ -46,10 +47,10 @@ class TaskController extends Controller
     {
         $request->validate([
             'user_id' => 'sometimes|required',
-            'product' => 'sometimes|required',
-            'description' => 'sometimes|required',
+            'order_id' => 'sometimes|required',
+            'task_name' => 'sometimes|required',
+            'time_spent' => 'sometimes|required',
             'status' => 'sometimes|required',
-            'time' => 'sometimes|required',
         ]);
 
         return $task->update($request->all());

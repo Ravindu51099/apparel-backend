@@ -25,6 +25,7 @@ class CustomerController extends Controller
             'name' => 'required',
             'email' => 'required',
             'contact' => 'required',
+            'address' => 'required',
         ]);
         return Customer::create(
             $request->all()
@@ -48,6 +49,7 @@ class CustomerController extends Controller
             'name' => 'sometimes|required',
             'email' => 'sometimes|required',
             'contact' => 'sometimes|required',
+            'address' => 'sometimes|required',
         ]);
 
         return $customer->update($request->all());

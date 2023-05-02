@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,4 +29,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // protected routes go here
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::resource('customers', CustomerController::class);
+    Route::resource('orders', OrderController::class);
+    Route::resource('tasks', TaskController::class);
 });
